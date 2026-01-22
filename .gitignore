@@ -100,3 +100,4 @@ InitTestScene*.unity*
 
 # vs code specific files - added by Jonathan Moster
 .vscode
+*.slnx
