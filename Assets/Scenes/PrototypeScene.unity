@@ -1286,7 +1286,6 @@ GameObject:
   - component: {fileID: 982332702}
   - component: {fileID: 982332701}
   - component: {fileID: 982332700}
-  - component: {fileID: 982332703}
   m_Layer: 0
   m_Name: CinemachineCamera
   m_TagString: Untagged
@@ -1307,12 +1306,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineFollow
   TrackerSettings:
-    BindingMode: 4
+    BindingMode: 2
     PositionDamping: {x: 1, y: 1, z: 1}
     AngularDampingMode: 0
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
-  FollowOffset: {x: 0, y: 0, z: -10}
+  FollowOffset: {x: 15, y: 22.5, z: 15}
 --- !u!114 &982332701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1333,7 +1332,7 @@ MonoBehaviour:
   m_StreamingVersion: 20241001
   m_LegacyPriority: 0
   Target:
-    TrackingTarget: {fileID: 0}
+    TrackingTarget: {fileID: 71386914}
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
@@ -1364,26 +1363,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 982332698}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.14555332, y: 0.8544435, z: -0.35139683, w: -0.3539221}
-  m_LocalPosition: {x: 15, y: 22.5, z: 15}
+  m_LocalRotation: {x: -0.15163289, y: 0.84825885, z: -0.36607417, w: -0.35136032}
+  m_LocalPosition: {x: 15, y: 24, z: 15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 45, y: -135, z: 0}
---- !u!114 &982332703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 982332698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e8b78ac948f05a46a6d8339a503172b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineHardLookAt
-  LookAtOffset: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!1 &1069762096
 GameObject:
   m_ObjectHideFlags: 0
@@ -1995,8 +1981,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1357847708}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.14555332, y: 0.8544435, z: -0.35139683, w: -0.3539221}
-  m_LocalPosition: {x: 15, y: 22.5, z: 15}
+  m_LocalRotation: {x: -0.15163289, y: 0.84825885, z: -0.36607417, w: -0.35136032}
+  m_LocalPosition: {x: 15, y: 24, z: 15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
