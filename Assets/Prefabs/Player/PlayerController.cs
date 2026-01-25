@@ -4,8 +4,9 @@ using System;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float speed = 10f;
-    [SerializeField] private float turnSpeed = 360f;
+    [Header("Player Movement")]
+    [SerializeField] private float runSpeed = 10f;
+    [SerializeField] private float turnSpeed = 1080f;
 
     private InputSystem_Actions _playerInputActions;
     private Vector3 _moveInput;
@@ -62,7 +63,7 @@ public class PlayerController : MonoBehaviour
    // Moves the player in the direction _moveInput indicates
     private void Move()
     {
-        Vector3 moveDirection = transform.forward * speed * _moveInput.magnitude * Time.deltaTime;
+        Vector3 moveDirection = transform.forward * runSpeed * _moveInput.magnitude * Time.deltaTime;
         _characterController.Move(moveDirection);
     }
 
