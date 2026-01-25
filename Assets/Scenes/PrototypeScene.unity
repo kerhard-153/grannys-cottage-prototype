@@ -303,7 +303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffcc8ca1b436a134cb4d14a3f2c48e33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  speed: 10
+  runSpeed: 10
   turnSpeed: 1080
 --- !u!1 &130219809
 GameObject:
@@ -1383,7 +1383,7 @@ MonoBehaviour:
   Composition:
     ScreenPosition: {x: 0, y: 0}
     DeadZone:
-      Enabled: 1
+      Enabled: 0
       Size: {x: 0.1, y: 0.95}
     HardLimits:
       Enabled: 0
