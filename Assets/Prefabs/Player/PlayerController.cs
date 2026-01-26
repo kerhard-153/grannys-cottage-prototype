@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     private Vector3 _moveInput;
     private CharacterController _characterController;
 
+    public float playerHealth = 100f;
+
     private void Awake()
     {
         _playerInputActions = new InputSystem_Actions();
@@ -65,6 +67,11 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 moveDirection = transform.forward * runSpeed * _moveInput.magnitude * Time.deltaTime;
         _characterController.Move(moveDirection);
+    }
+
+    public void TakeDamage(float damage)
+    {
+        playerHealth -= damage;
     }
 
 }
