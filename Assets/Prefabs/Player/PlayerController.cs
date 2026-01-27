@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
 
     public float playerHealth = 100f;
 
+    private bool isJumping = false;
+
     private void Awake()
     {
         _playerInputActions = new InputSystem_Actions();
@@ -59,7 +61,25 @@ public class PlayerController : MonoBehaviour
     {
         // gathers movement input
         Vector2 moveInput = _playerInputActions.Player.Move.ReadValue<Vector2>();
-        _moveInput = new Vector3(moveInput.x, 0, moveInput.y);
+        if (!isJumping)
+        {
+            _moveInput = new Vector3(moveInput.x, 0, moveInput.y);    
+        } 
+        else if (isJumping && transform.position.y < 4 )
+        {
+            _moveInput = new Vector3(moveInput.x, 2, moveInput.y);
+        }
+        
+
+        // gathers jump input
+        if (_playerInputActions.Player.Jump.WasPressedThisFrame())
+        {
+            isJumping = true;
+        }
+        if (_playerInputActions.Player.Jump.WasReleasedThisFrame())
+        {
+            isJumping = false;
+        }
     }
 
    // Moves the player in the direction _moveInput indicates
@@ -72,6 +92,12 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(float damage)
     {
         playerHealth -= damage;
+    }
+
+    
+    private void Jump()
+    {
+        
     }
 
 }
