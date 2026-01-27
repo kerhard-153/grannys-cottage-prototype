@@ -100,27 +100,21 @@ public class PlayerController : MonoBehaviour
 
     private void ApplyGravity()
     {
-    
         _verticalVelocity = _gravity * _gravityMultiplier * Time.deltaTime;
-
     }
 
     private void Jump()
     {
-        
         // gathers jump input, edits camera deadzone while midair
         if (_playerInputActions.Player.Jump.WasPressedThisFrame())
         {
             isJumping = true;
             _playerCameraScript.EnableJumpCamera(isJumping);
-            //transform.position.Set(transform.position.x, 5.0f, transform.position.z);
-            
         }
         if (_playerInputActions.Player.Jump.WasReleasedThisFrame())
         {
             isJumping = false;
             _playerCameraScript.EnableJumpCamera(isJumping);
-            //transform.position.Set(transform.position.x, 1.5f, transform.position.z);
         }
 
         if (isJumping)
@@ -136,6 +130,7 @@ public class PlayerController : MonoBehaviour
                 _verticalVelocity = 0;
             }
         }
+        // if not jumping, fall unless on the ground
         else
         {
             if (transform.position.y > 1.8)
@@ -146,10 +141,6 @@ public class PlayerController : MonoBehaviour
             {
                 _verticalVelocity = 0;
             }
-        }
-        
-        
+        }  
     }
-        
-
 }
