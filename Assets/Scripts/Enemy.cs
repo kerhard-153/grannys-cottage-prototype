@@ -6,7 +6,10 @@ public class Enemy : MonoBehaviour
 {
     public Transform player;
     private NavMeshAgent navMeshAgent;
-    [SerializeField] float damage = 10f;
+    [SerializeField] float maxHealth = 30f;
+    float currentHealth;
+
+    public float damage = 10f;
 
     private IObjectPool<Enemy> enemyPool;
 
@@ -20,6 +23,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        currentHealth = maxHealth;
     }
 
     void Update()
@@ -30,12 +34,19 @@ public class Enemy : MonoBehaviour
        }
     }
 
-    public void HandleHit(Collider other)
+    public void HandleHit(float damage)
     {
-        PlayerController player = other.GetComponentInParent<PlayerController>();
 
         if (isDead) return;
 
+        currentHealth -= damage;
+
+        if (currentHealth <= 0)
+            Die();
+    }
+
+    void Die()
+    {
         isDead = true;
 
         if (Spawner.Instance != null)
@@ -50,5 +61,6 @@ public class Enemy : MonoBehaviour
     public void ResetEnemy()
     {
         isDead = false;
+        currentHealth = maxHealth;
     }
 }

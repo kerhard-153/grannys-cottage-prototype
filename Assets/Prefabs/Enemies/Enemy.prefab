@@ -222,4 +222,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBehavior
   player: {fileID: 0}
+  maxHealth: 10
   damage: 10

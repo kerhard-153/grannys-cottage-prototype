@@ -1,12 +1,15 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHitbox : MonoBehaviour
 {
-    private PlayerController player;
+    PlayerHealth playerHealth;
+
+    public Slider slider;
 
     private void Awake()
     {
-        player = GetComponentInParent<PlayerController>();
+        playerHealth = GetComponentInParent<PlayerHealth>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -15,7 +18,18 @@ public class PlayerHitbox : MonoBehaviour
 
         if (enemy != null)
         {
-            enemy.HandleHit(GetComponent<Collider>());
+            playerHealth.TakeDamage(enemy.damage);
         }
+    }
+
+    public void SetMaxHealth(float health)
+    {
+        slider.maxValue = health;
+        slider.value = health;
+    }
+
+    public void SetHealth(float health)
+    {
+        slider.value = health;
     }
 }
